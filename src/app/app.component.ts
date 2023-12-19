@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Fulanito de tal';
-  subtitle = 'es la persona que esta logeada';
+  count: number = 0;
+  increse() {
+    this.count++;
+  }
+  decrese() {
+    this.count--;
+  }
 }
