@@ -1,2 +1,4 @@
-<h1>the message send is:</h1>
-<p>{{ messageFromFather }}</p>
+<div>
+  <input type="text" [(ngModel)]="mensaje" placeholder="Escribe algo"/>
+  <button type="button" (click)="enviarMsj()">Enviar</button>
+</div>

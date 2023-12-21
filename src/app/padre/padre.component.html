@@ -1,3 +1,2 @@
-<!-- component padre -->
-<h1>{{ title }} vive is alive!</h1>
-<app-hijo [messageFromFather]="messageFromFather"></app-hijo>
+<app-hijo (msjDeHijo)="recibirMsj($event)"/>
+<h5>El mensaje recibido de hijo es: {{ msjRecibido }}</h5>
