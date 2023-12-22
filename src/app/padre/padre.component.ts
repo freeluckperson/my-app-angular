@@ -8,12 +8,21 @@ import { ServicioFamiliarService } from '../servicio-familiar.service';
 })
 export class PadreComponent implements OnInit {
   nombre?: string;
-  
+
   constructor(private _servicioFamiliar: ServicioFamiliarService) {}
+
   ngOnInit(): void {
     this._servicioFamiliar.setHermanoGrande('Juanchon');
     this.nombre = this._servicioFamiliar.getHermanoGrande();
   }
+  saludar() {
+    this._servicioFamiliar.saludar(this._servicioFamiliar.getHermanoPequeño());
+  }
+
+  preguntar() {
+    console.log(this._servicioFamiliar.preguntarPorHijo());
+  }
+
   contador: number = 0;
   incremento() {
     this.contador++;
