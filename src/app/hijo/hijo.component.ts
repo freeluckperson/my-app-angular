@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
@@ -6,11 +6,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './hijo.component.css',
 })
 export class HijoComponent {
-  @Output() msjDeHijo = new EventEmitter<string>();
-  
-  mensaje: string = '';
+  @Output() incremento = new EventEmitter<void>();
+  @Output() decremento = new EventEmitter<void>();
 
-  enviarMsj() {
-    this.msjDeHijo.emit(this.mensaje);
+  incrementoMeth() {
+    this.incremento.emit();
+  }
+  decrementoMeth() {
+    this.decremento.emit();
   }
 }

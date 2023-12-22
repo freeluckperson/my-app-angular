@@ -1,23 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ServicioFamiliarService } from '../servicio-familiar.service';
 
 @Component({
   selector: 'app-padre',
   templateUrl: './padre.component.html',
   styleUrl: './padre.component.css',
 })
-export class PadreComponent {
-  msjRecibido: string = '';
-
-  recibirMsj($event: string) {
-    this.msjRecibido = $event;
+export class PadreComponent implements OnInit {
+  nombre?: string;
+  
+  constructor(private _servicioFamiliar: ServicioFamiliarService) {}
+  ngOnInit(): void {
+    this._servicioFamiliar.setHermanoGrande('Juanchon');
+    this.nombre = this._servicioFamiliar.getHermanoGrande();
   }
-
-  //Counter
-  count: number = 0;
-  increse() {
-    this.count++;
+  contador: number = 0;
+  incremento() {
+    this.contador++;
   }
-  decrese() {
-    this.count--;
+  decremento() {
+    this.contador--;
   }
 }
