@@ -10,9 +10,18 @@ import { PadreComponent } from './padre/padre.component';
 import { HijoComponent } from './hijo/hijo.component';
 import { FormsModule } from '@angular/forms';
 import { HermanoComponent } from './hermano/hermano.component';
+import { EstilosHermanosDirective } from './estilos-hermanos.directive';
+import { MiPipePersonalizadoPipe } from './mi-pipe-personalizado.pipe';
 
 @NgModule({
-  declarations: [AppComponent, PadreComponent, HijoComponent, HermanoComponent],
+  declarations: [
+    AppComponent,
+    PadreComponent,
+    HijoComponent,
+    HermanoComponent,
+    EstilosHermanosDirective,
+    MiPipePersonalizadoPipe,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

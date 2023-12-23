@@ -8,6 +8,8 @@ import { ServicioFamiliarService } from '../servicio-familiar.service';
 })
 export class PadreComponent implements OnInit {
   nombre?: string;
+  fecha: Date = new Date();
+  dolar: number = 35.7;
 
   constructor(private _servicioFamiliar: ServicioFamiliarService) {}
 
